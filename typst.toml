@@ -1,0 +1,11 @@
+[package]
+name = "ufr-sheet"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Jakob Haverkamp"]
+license = "MIT"
+description = "A template for writing my worksheets for University of Freiburg."
+
+[template]
+path = "template"
+entrypoint = "main.typ"
