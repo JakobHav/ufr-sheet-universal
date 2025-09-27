@@ -7,20 +7,20 @@
 */
 
 #let conf(
-  /*
-  Date: Datum
-  */
-  date: "",
+  header: true,
+  header_start: 1,
+  numbering: "1",
+  number-align: center,
+  name: "",
+  rz: "",
+  matrikelnr: "",
   title: "",
+  left_header: true,
+  subject: "",
   semester: "",
   prof: "",
-  subject: "",
-  header: "1",
-  numbering: "1",
-  name: "Jakob Haverkamp",
-  mat: "5932110",
-  rz: "jh1444",
-  header_start: 1,
+  date: "",
+  block_sentence: true,
   doc,
 ) = {
   set text(
@@ -28,49 +28,30 @@
     size: 13pt,
   )
 
+  set par(
+    justify: true,
+  )
+
   let l = ""
   let c = ""
   let r = ""
 
-  if header == "1" or header == true {
+  if header == true {
     l = name
     c = subject
     r = title
-  } else if header == "2" {
-    l = name
-    c = title
-    r = subject
-  } else if header == "3" {
-    l = name
-    c = ""
-    r = title
-  } else if header == "4" {
-    l = name
-    c = ""
-    r = subject
-  } else {
-    header = false
+  } else if header != false {
+    l = header.at(0)
+    c = header.at(1)
+    r = header.at(2)
   }
 
   set page(
     width: 210mm,
     height: 297mm,
-    margin: (top: 23mm, bottom: 20mm, left: 18mm, right: 18mm),
-    numbering: {
-      if numbering != "0" and numbering != "none" and numbering != false {
-        numbering.replace("rr", "").replace("ll", "")
-      }
-    },
-    number-align: {
-      if numbering.contains("rr") {
-        right
-      } else if numbering.contains("ll") {
-        left
-      } else {
-        center
-      }
-    },
-
+    margin: (top: 23mm, bottom: 20mm, left: 23mm, right: 23mm),
+    numbering: numbering,
+    number-align: number-align,
     header: context {
       set text(size: 14pt)
       if header != false and counter(page).get().first() > header_start {
@@ -104,11 +85,17 @@
     ]
 
     #align(left)[
-      #block()[
+      #block(height: 4em)[
         \
-        #name \
-        RZ: #rz \
-        Matrikel: #mat \
+        #if (left_header == true) {
+          [
+            #name \
+            RZ: #rz \
+            Matrikel: #matrikelnr
+          ]
+        } else {
+          left_header
+        }
       ]
     ]
 

@@ -6,7 +6,7 @@
   Template for tech worksheet
 */
 
-#import "@local/ufr-sheet:0.1.0": conf
+#import "@local/ufr-sheet-universal:0.1.0": conf
 #import "@preview/cetz:0.4.0": canvas, draw, tree
 
 #show: doc => conf(
@@ -16,7 +16,9 @@
   prof: "Prof. Dr. Christoph Scholl",
   semester: "SS 2025",
   title: "Übungsblatt 07",
-  header: "1",
+  name: "Jakob H.",
+  rz: "jh0000",
+  matrikelnr: "012345678"
 )
 
 
@@ -39,9 +41,6 @@ overline(x_1) x_2 x_3 x_4or
 overline(x_1) x_2 overline(x_3) x_4 or
 overline(x_1) x_2 overline(x_3) overline(x_4) or
 overline(x_1) overline(x_2) x_3 x_4$
-=== b)
-$"cost"(f_1, f_2) = ("cost"_1(f_1, f_2), "cost"_2(f_1, f_2)) = (abs("Mon")_f_1+abs("Mon")_f_2, abs("lit")_f_1 + abs("lit")_f_2)$ \
-$= (5 + 5, 4 + 4) = (10, 8)$\
 
 
 === c) Hypercube für $f_1$
@@ -433,7 +432,7 @@ Gegenbeispiel: (a, b, c, f) = (0, 0, 0, 0), da $1=1 and f = 0$ kein Implikat
 
 Kein Primimplikant, weil $a and overline(c)$ auch ein Implikant ist\
 
-*d)* $b and c = 1$ bei (a, b, c) = (0, 1, 1) und (1, 1, 1), bei beiden ist auch $f(0, 1, 1) = f(1, 1, 1) = 1$,\ $->$ also Implikant
+*d)* $b and c = 1$ bei (a, b, c) = (0, 1, 1) & (1, 1, 1), bei beiden ist auch $f(0, 1, 1) = f(1, 1, 1) = 1$,\ $->$ also Implikant
 
 Ist auch Primimplikant, weil weder b noch c alleine Implikanten.
 
@@ -747,13 +746,3 @@ alle_min: $overline(x_1)overline(x_2)overline(x_3)overline(x_4)or overline(x_1)o
 \
 Primimplikanten: $overline(x_1)overline(x_3) or x_2x_3 or x_1 overline(x_4) or x_2 overline(x_4) or overline(x_1)x_2 or overline(x_3) overline(x_4)$
 \
-\
-i) $"cost"(f) = "cost"("alle_min") = ("cost"_1, "cost"_2) = (abs("Mon"), abs("lit")) = (11, 4)$\
-ii) $"cost"(f) = "cost"("primim") = ("cost"_1, "cost"_2) = (abs("Mon"), abs("lit")) = (6, 4)$\
-
-
-#v(10pt)
-= Aufgabe 4
-
-$z. Z: m, m' "Monome" in B E(X_n), m <= m' -> "lit"(m') in "lit"(m)$ \
-Annahme

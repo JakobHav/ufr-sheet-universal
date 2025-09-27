@@ -6,17 +6,22 @@
   Template for tech worksheet
 */
 
-#import "@local/ufr-sheet:0.1.0": conf
+#import "@local/ufr-sheet-universal:0.1.0": conf
 
 #show: doc => conf(
+  name: "Max Mustermann",
+  rz: "mm1234",
+  matrikelnr: "012345678",
+  title: "Dokumenttitel",
+  left_header: true,
+  subject: "Embedded Systems Engineering",
+  semester: "WS 25/26",
+  prof: "Prof. Dr. Musterfrau",
+  date: "",
+  block_sentence: true,
   doc,
-  subject: "Technische Info",
-  date: "09.06.2025",
-  prof: "Prof. Dr. Christoph Scholl",
-  semester: "SS 2025",
-  title: "Übungsblatt 00",
 )
 
 = Aufgabe 1
 
-#lorem(420)
+#lorem(4202)

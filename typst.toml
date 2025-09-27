@@ -1,5 +1,5 @@
 [package]
-name = "ufr-sheet"
+name = "ufr-sheet-universal"
 version = "0.1.0"
 entrypoint = "lib.typ"
 authors = ["Jakob Haverkamp"]
