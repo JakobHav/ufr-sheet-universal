@@ -6,6 +6,9 @@
   Template for simple worksheet
 */
 
+// Codeblöcke schön machen:
+
+
 #let conf(
   header: true,
   header_start: 1,
@@ -20,17 +23,25 @@
   semester: "",
   prof: "",
   date: "",
+  font_family: "New Computer Modern",
   block_sentence: true,
   doc,
 ) = {
-  set text(
-    lang: "de",
-    size: 13pt,
-  )
+  import "@preview/codly:1.3.0": *
+  import "@preview/codly-languages:0.1.1": *
 
-  set par(
-    justify: true,
+  show: codly-init.with()
+  codly(
+    zebra-fill: black.lighten(97.5%),
+    languages: codly-languages,
+    display-icon: false,
+    display-name: false,
   )
+  show heading: set text(size: 10pt)
+  show heading.where(level: 1): set text(size: 13pt)
+  show heading.where(level: 2): set text(size: 12pt)
+  show heading.where(level: 3): set text(size: 11pt)
+
 
   let l = ""
   let c = ""
@@ -46,10 +57,20 @@
     r = header.at(2)
   }
 
+  set text(
+    lang: "de",
+    size: 11.5pt,
+    font: font_family,
+  )
+
+  set par(
+    justify: true,
+  )
+
   set page(
     width: 210mm,
     height: 297mm,
-    margin: (top: 23mm, bottom: 20mm, left: 23mm, right: 23mm),
+    margin: (top: 23mm, bottom: 28mm, left: 28mm, right: 28mm),
     numbering: numbering,
     number-align: number-align,
     header: context {
@@ -72,7 +93,7 @@
 
   block(width: 100%, below: -43.5pt)[
     #align(center)[
-      #block(below: -60pt)[
+      #block(below: -54pt)[
         #strong[
           #text(14pt)[
             #subject \
@@ -85,7 +106,7 @@
     ]
 
     #align(left)[
-      #block(height: 4em)[
+      #block(height: 3.5em)[
         \
         #if (left_header == true) {
           [
@@ -100,7 +121,7 @@
     ]
 
     #align(right)[
-      #block(above: -69pt)[
+      #block(above: -60pt)[
         #box(image(
           "./assets/logo.png",
           height: 127pt,
@@ -109,7 +130,7 @@
     ]
   ]
 
-  rect(width: 84%, height: 3.9pt, fill: freiburggray)
+  rect(width: 82.5%, height: 3.9pt, fill: freiburggray)
 
   align(center)[
     #block(above: 40pt, below: 5pt)[
