@@ -9,7 +9,7 @@ To Start, just head to your package path and git clone this Repository.
 | **Linux**   | `~/.local/share/typst/packages/local/`                |
 | **Windows** | `%APPDATA%\typst\packages\local\`                     |
 
- Then, just add your Config to your Typst file like so:
+ Then, just add your config to your Typst file like this for a simple sheet:
 
 ```typst
 #import "@local/ufr-sheet-universal:0.1.0": conf
@@ -20,6 +20,31 @@ To Start, just head to your package path and git clone this Repository.
   date: "04.11.2025",
   prof: "Prof. Musterfrau",
   title: "Übungsblatt",
-  name: "Mara Musterfrau",
+  name: "Mara Musterfrau", 
+  rz: mm9999,
+  matrikelnr: 5999999
 )
 ```
+
+Here is a list of all parameters with their default values:
+
+```typst
+header: true,
+header_start: 1,
+numbering: "1",
+number-align: center,
+name: "",
+rz: "",
+matrikelnr: "",
+title: "",
+left_header: true,
+subject: "",
+semester: "",
+prof: "",
+date: "",
+font_family: "New Computer Modern",
+block_sentence: true,
+``` 
+
+Notable: You can replace the default left header with rz, mat, ... with `left_header: [],` and put your desired content into the content Block. `header_start` describes, on what page number the headline with subject etc.. starts, you can disable it all together with `header: false`.
+
