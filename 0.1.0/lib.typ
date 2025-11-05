@@ -134,8 +134,8 @@
 
   align(center)[
     #block(above: 40pt, below: 5pt)[
-      #text(15pt)[
-        #strong()[#title]
+      #text(16pt, weight: "medium", stroke: 0.25pt)[
+        #title
       ] \
       #{
         let datelist = date.split(".")
@@ -146,7 +146,9 @@
           date = str(datelist.at(0)) + ". " + monatname + " " + datelist.at(2)
         }
       }
-      #date
+      #text(11.0pt)[
+        #date
+      ]
     ]
   ]
   block()
