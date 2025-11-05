@@ -29,6 +29,7 @@ To Start, just head to your package path and git clone this Repository.
 Here is a list of all parameters with their default values:
 
 ```typst
+#show: doc => conf(
 header: true,
 header_start: 1,
 numbering: "1",
@@ -44,7 +45,10 @@ prof: "",
 date: "",
 font_family: "New Computer Modern",
 block_sentence: true,
+)
 ``` 
 
-Notable: You can replace the default left header with rz, mat, ... with `left_header: [],` and put your desired content into the content Block. `header_start` describes, on what page number the headline with subject etc.. starts, you can disable it all together with `header: false`.
-
+Notable Settings: 
+- You can replace the default left header with rz, mat, ... with `left_header: [],` and put your desired content into the content Block. If you do that, pay Attention to the header, which uses the name Variable.
+- `header_start` describes, on what page number the headline with subject etc.. starts, you can disable it all together with `header: false`.
+- `font_family: "New Computer Modern",` is a Font that looks quite similar to typical LaTeX, i made it default, but you can change to your desired font if you want.
