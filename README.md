@@ -3,7 +3,7 @@
 I improved my typst templete sheet for University of Freiburg submissions over the last semester and finally decided to pubish it in a universal Version :) 
 
 ## Install
-To use it, just head to your package path and clone this Repository.
+To use it, just head to your package path and clone/download this Repository.
 
 | OS          | Default local package path                            |
 | ----------- | ----------------------------------------------------- |
@@ -11,8 +11,10 @@ To use it, just head to your package path and clone this Repository.
 | **Linux**   | `~/.local/share/typst/packages/local/`                |
 | **Windows** | `%APPDATA%\typst\packages\local\`                     |
 
+Note: Linux may use different path.
+
+Clone with:
 ```bash
-cd <path>
 git clone https://github.com/JakobHav/ufr-sheet-universal.git
 ```
 
@@ -23,13 +25,14 @@ git clone https://github.com/JakobHav/ufr-sheet-universal.git
 
 #show: doc => conf(
   doc,
+  name: "Mara Musterfrau", 
+  rz: "mm9999",
+  matrikelnr: 5999999,
   subject: "Subject",
-  date: "04.11.2025",
+  semester: "WS 25/26",
   prof: "Prof. Musterfrau",
   title: "Übungsblatt",
-  name: "Mara Musterfrau", 
-  rz: mm9999,
-  matrikelnr: 5999999
+  date: "04.11.2025",
 )
 ```
 ## Settings
